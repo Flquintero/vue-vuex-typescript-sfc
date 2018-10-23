@@ -1,8 +1,8 @@
 import { Module } from 'vuex';
-import { getters } from '../profile/getters';
-import { actions } from '../profile/actions';
-import { mutations } from '../profile/mutations';
-import { ProfileState } from '../profile/types';
+import { getters } from './getters';
+import { actions } from './actions';
+import { mutations } from './mutations';
+import { ProfileState } from './types';
 import { RootState } from '../../types';
 // import { RootState } from './types';
 
