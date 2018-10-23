@@ -13,12 +13,7 @@ const appRouter: VueRouter = new VueRouter({
 
 //IMPORT VUEX
 import Vuex from "vuex";
-import { Store } from "vuex"; 
-import mainStore from './vuex/store';
-
-Vue.use(Vuex);
-
-const store: Store<any> = new Vuex.Store(mainStore);
+import store from "./store/store";
 
 //INIT APP
 import App from './App.vue'

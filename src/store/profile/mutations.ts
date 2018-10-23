@@ -1,5 +1,5 @@
 import { MutationTree } from 'vuex';
-import { ProfileState, User } from '../profile/types';
+import { ProfileState, User } from './types';
 
 export const mutations: MutationTree<ProfileState> = {
     profileLoaded(state, payload: User) {

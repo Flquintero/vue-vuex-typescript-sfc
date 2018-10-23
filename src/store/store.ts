@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex, { StoreOptions } from 'vuex';
 import { RootState } from './types';
-import { profile } from './modules/profile';
+import { profile } from './profile/index';
 
 Vue.use(Vuex);
 

@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "vue-class-component": "^6.3.2",
+    "vue-property-decorator": "^7.2.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "vuex-class": "^0.3.1",
