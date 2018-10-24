@@ -8,6 +8,7 @@ import Vuex, { StoreOptions } from 'vuex';
 import { RootState } from './types';
 //BELOW IMPORT SPECIFIC MODULES TO BE ABLE TO INCLUDE THEM AS PART OF THE MAIN STORE. WE INCLUDE THE INDEX.TS FILE FOR EACH MODULE AS THERE WE IMPORT ALL THE DIFFERENT FUNCTIONALITY AS WELL AS TYPES
 import { profile } from './profile/index';
+import { customer } from './customer/index';
 
 Vue.use(Vuex);
 
@@ -18,7 +19,8 @@ const store: StoreOptions<RootState> = {
     },
     //BELOW DEFINE ALL THE MODULES TO INCLUDE IN MAIN STORE.
     modules: {
-        profile
+        profile,
+        customer
     }
 };
 

@@ -14,21 +14,24 @@
     import {Component, Prop, Vue} from 'vue-property-decorator';
     //BELOW INCLUDE TYPES FROM EACH STORE TO BE ABLE TO HAVE DATA FROM STORES TYPESAFE
     import { ProfileState, User } from '../store/profile/types';
+    import { CustomerState, Customer } from '../store/customer/types';
 
 //START COMPONENT AND INCLUDE PROPS AND COMPONENTS AS AN ARGUMENT {components:{},props:{}}
 @Component
     export default class MainView extends Vue {
         //INCLUDE SPECIFIC MODULE STATES
         @State('profile') profile: ProfileState;
+        @State('customer') customer: CustomerState;
         //INCLUDE SPECIFIC MODULE ACTIONS. TAKES ARGUMENT {{MODULE}}/{{ACTION}} AS DEFINED IN MODULES OBJECT WHEN MAIN STORE IS DEFINED IN STORE.TS
         @Action('profile/fetchData') fetchData: any;
+        @Action('customer/fetchCustomer') fetchCustomer: any;
         //INCLUDE SPECIFIC MODULE GETTERS. TAKES ARGUMENT {{MODULE}}/{{ACTION}} AS DEFINED IN MODULES OBJECT WHEN MAIN STORE IS DEFINED IN STORE.TS
         @Getter('profile/fullName') fullName: string;
         
-
         mounted() {
             // fetching data as soon as the component's been mounted
             this.fetchData();
+            this.fetchCustomer();
         }
 
         // computed variable based on first and lastname
