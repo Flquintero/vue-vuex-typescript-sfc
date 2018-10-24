@@ -15,7 +15,7 @@ const appRouter: VueRouter = new VueRouter({
 import Vuex from "vuex";
 import store from "./store/store";
 
-//INIT APP
+//INIT APP TO APP.VUE COMPONENT
 import App from './App.vue'
 
 let vueInstance = new Vue({

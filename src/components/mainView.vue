@@ -8,16 +8,22 @@
 </template>
 
 <script lang="ts">
+    //IMPORTS THE DECORATORS TO WORK WITH mapState, mapAction, etc FUNCTIONALITY
     import { State, Action, Getter, Mutation } from 'vuex-class';
+    //IMPORTS THE DECORATORS TO STRUCTURE THE VUE-COMPONENT AS CLASS STYLE
     import {Component, Prop, Vue} from 'vue-property-decorator';
+    //BELOW INCLUDE TYPES FROM EACH STORE TO BE ABLE TO HAVE DATA FROM STORES TYPESAFE
     import { ProfileState, User } from '../store/profile/types';
-    const namespace: string = 'profile';
+
+//START COMPONENT AND INCLUDE PROPS AND COMPONENTS AS AN ARGUMENT {components:{},props:{}}
 @Component
     export default class MainView extends Vue {
-
+        //INCLUDE SPECIFIC MODULE STATES
         @State('profile') profile: ProfileState;
-        @Action('fetchData', { namespace }) fetchData: any;
-        @Getter('fullName', { namespace }) fullName: string;
+        //INCLUDE SPECIFIC MODULE ACTIONS. TAKES ARGUMENT {{MODULE}}/{{ACTION}} AS DEFINED IN MODULES OBJECT WHEN MAIN STORE IS DEFINED IN STORE.TS
+        @Action('profile/fetchData') fetchData: any;
+        //INCLUDE SPECIFIC MODULE GETTERS. TAKES ARGUMENT {{MODULE}}/{{ACTION}} AS DEFINED IN MODULES OBJECT WHEN MAIN STORE IS DEFINED IN STORE.TS
+        @Getter('profile/fullName') fullName: string;
         
 
         mounted() {
@@ -25,7 +31,7 @@
             this.fetchData();
         }
 
-        // computed variable based on user's email
+        // computed variable based on first and lastname
         // get fullname() {
         //     const firstName = (this.profile.user && this.profile.user.firstName) || '';
         //     const lastName = (this.profile.user && this.profile.user.lastName) || '';
